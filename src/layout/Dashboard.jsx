@@ -9,23 +9,38 @@ const Dashboard = () => {
   const columns = ["ID", "Name", "Email", "Lunch", "Snack"];
   const menuItems = ["Dashboard", "About", "Services", "Logout"];
 
-  const [data, setData] = useState(user)
+  const [data, setData] = useState(user);
 
   const handleDelete = (id) => {
-    const newData = data.filter((item) => id !==item.id );
+    const newData = data.filter((item) => id !== item.id);
     setData(newData);
   };
-
 
   return (
     <div className="flex">
       <Sidebar menuItems={menuItems} />
       <div className="flex-grow p-4">
-        <h1 className="text-2xl font-bold mb-4">Meal Management</h1>
-        <Table columns={columns} data={data} className="p-5 w-fit" onDelete={handleDelete} />
-        <div className="flex flex-wrap gap-4">
-          <Card title="Lunch" content={numberOfMeal(data, "lunch")} />
-          <Card title="Snack" content={numberOfMeal(data, "snack")} />
+        <h1 className="text-2xl font-bold my-4 text-center text-gray-700">Meal Management</h1>
+        <div className="flex flex-wrap justify-between  gap-10 items-center px-8 py-5">
+          <Table
+            columns={columns}
+            data={data}
+            className="w-full"
+            onDelete={handleDelete}
+          />
+          <div className="flex w-full h-full gap-4">
+            <Card
+              title="Lunch"
+              content={numberOfMeal(data, "lunch")}
+              className="w-1/2 md:w-1/2 p-2"
+            />
+
+            <Card
+              title="Snack"
+              content={numberOfMeal(data, "snack")}
+              className="w-full md:w-1/2 p-2"
+            />
+          </div>
         </div>
       </div>
     </div>
