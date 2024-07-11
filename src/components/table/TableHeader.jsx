@@ -1,11 +1,16 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const TableHeader = ({ columns }) => {
   return (
-    <thead>
+    <thead className="bg-gray-800 text-white">
       <tr>
         {columns.map((column, index) => (
-          <th key={index}>{column}</th>
+          <th
+            key={index}
+            className="px-12 py-4 text-left"
+          >
+            {column}
+          </th>
         ))}
       </tr>
     </thead>

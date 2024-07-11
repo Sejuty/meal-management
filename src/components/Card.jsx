@@ -2,15 +2,15 @@ import PropTypes from "prop-types";
 
 const Card = ({ title, content }) => {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+    <div className="max-w-sm rounded overflow-hidden bg-gray-800 text-gray-200">
       {title && (
-        <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{title}</div>
+        <div className="px-10 py-4">
+          <div className="font-normal text-xl ">{title}</div>
         </div>
       )}
       {content && (
-        <div className="px-6 py-4">
-          <p className="text-gray-700 text-base">{content}</p>
+        <div className="px-3 pb-4">
+          <p className="text-center">{content}</p>
         </div>
       )}
     </div>
