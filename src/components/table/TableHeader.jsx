@@ -5,13 +5,11 @@ const TableHeader = ({ columns }) => {
     <thead className="bg-gray-800 text-white">
       <tr>
         {columns.map((column, index) => (
-          <th
-            key={index}
-            className="px-12 py-4 text-left"
-          >
+          <th key={index} className="px-12 py-4 text-left">
             {column}
           </th>
         ))}
+        <th className="px-12 py-4 text-left text-gray-200">Actions</th>
       </tr>
     </thead>
   );
