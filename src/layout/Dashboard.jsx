@@ -4,11 +4,9 @@ import Sidebar from "../components/Sidebar";
 import Table from "../components/table/Table";
 import user from "../constant/user.json";
 import { numberOfMeal } from "../utils/helper";
+import { COLUMNS, SIDEBAR_ITEMS } from "../constant";
 
 const Dashboard = () => {
-  const columns = ["ID", "Name", "Email", "Lunch", "Snack"];
-  const menuItems = ["Dashboard", "About", "Services", "Logout"];
-
   const [data, setData] = useState(user);
 
   const handleDelete = (id) => {
@@ -18,12 +16,14 @@ const Dashboard = () => {
 
   return (
     <div className="flex">
-      <Sidebar menuItems={menuItems} />
+      <Sidebar menuItems={SIDEBAR_ITEMS} />
       <div className="flex-grow p-4">
-        <h1 className="text-2xl font-bold my-4 text-center text-gray-700">Meal Management</h1>
+        <h1 className="text-2xl font-bold my-4 text-center text-gray-700">
+          Meal Management
+        </h1>
         <div className="flex flex-wrap justify-between  gap-10 items-center px-8 py-5">
           <Table
-            columns={columns}
+            columns={COLUMNS}
             data={data}
             className="w-full"
             onDelete={handleDelete}
